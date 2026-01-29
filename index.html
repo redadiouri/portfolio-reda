@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réda Diouri - Développeur Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER / NAVBAR -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#hero" class="logo">Reda.dev</a>
+                
+                <!-- Menu burger pour mobile -->
+                <button class="burger-menu" id="burgerMenu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <!-- Menu navigation -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#hero" class="nav-link">Accueil</a></li>
+                    <li><a href="#about" class="nav-link">À propos</a></li>
+                    <li><a href="#skills" class="nav-link">Compétences</a></li>
+                    <li><a href="#projects" class="nav-link">Projets</a></li>
+                    <li><a href="#timeline" class="nav-link">Parcours</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECTION HERO -->
+        <section class="hero section" id="hero">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <span class="badge">Disponible pour projets freelance</span>
+                    <h1 class="hero-title">Réda Diouri</h1>
+                    <h2 class="hero-subtitle">Développeur Web & Étudiant en Informatique</h2>
+                    <p class="hero-description">
+                        Passionné par le développement web et les projets digitaux, j'aime transformer des idées en applications concrètes. 
+                        Mon approche combine compétences techniques et sensibilité humaine, acquise grâce à mon expérience dans l'accompagnement social.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                        <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION À PROPOS -->
+        <section class="about section" id="about">
+            <div class="container">
+                <h2 class="section-title fade-in">À propos de moi</h2>
+                
+                <div class="about-content">
+                    <!-- Photo de profil avec initiales -->
+                    <div class="profile-photo fade-in">
+                        <div class="initials">RD</div>
+                    </div>
+                    
+                    <div class="about-text fade-in">
+                        <p>
+                            Salut ! Moi c'est Réda, étudiant en <strong>Bachelor Développement Web & Logiciel</strong> à l'IPI Toulouse. 
+                            Entre deux cafés et quelques bugs mystérieux (qui finissent toujours par être un point-virgule oublié), 
+                            j'apprends à dompter le code et à transformer mes idées en projets concrets.
+                        </p>
+                        <p>
+                            Passionné par le web, j'aime créer des interfaces qui font dire "Wow !" (ou au moins "Ah, c'est joli"). 
+                            Du front au back, de l'automatisation aux petites applis utiles, je touche à tout avec curiosité. 
+                            Mon mot d'ordre ? Si ça marche, c'est déjà bien. Si c'est propre en plus, c'est Noël ! 🎄
+                        </p>
+                        <p>
+                            Mon parcours atypique — mélange d'informatique et de travail social (oui, j'ai aussi été éduc spé !) — 
+                            m'a appris une chose essentielle : derrière chaque ligne de code, il y a un humain. Du coup, je code 
+                            avec empathie, je communique sans jargon (sauf si tu veux parler API REST autour d'une bière), 
+                            et je rêve de lancer des projets digitaux qui servent vraiment à quelque chose. Bref, un developpeur qui écoute, ça existe !
+                        </p>
+                        
+                        <div class="about-info">
+                            <div class="info-item">
+                                <span class="info-label">📍 Localisation :</span>
+                                <span class="info-value">Toulouse, France</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">🌍 Langues :</span>
+                                <span class="info-value">Français, Anglais</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">🎓 Formation :</span>
+                                <span class="info-value">IPI Toulouse</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION COMPÉTENCES -->
+        <section class="skills section" id="skills">
+            <div class="container">
+                <h2 class="section-title fade-in">Compétences</h2>
+                
+                <div class="skills-grid">
+                    <!-- Langages -->
+                    <div class="skill-category card fade-in">
+                        <h3 class="category-title">Langages</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge">HTML</span>
+                            <span class="skill-badge">CSS</span>
+                            <span class="skill-badge">JavaScript</span>
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">PHP</span>
+                            <span class="skill-badge">SQL</span>
+                            <span class="skill-badge">Java</span>
+                            <span class="skill-badge">C++ (bases)</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Frameworks & Outils -->
+                    <div class="skill-category card fade-in">
+                        <h3 class="category-title">Frameworks & Outils</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge">Next.js</span>
+                            <span class="skill-badge">React</span>
+                            <span class="skill-badge">Node.js</span>
+                            <span class="skill-badge">Express</span>
+                            <span class="skill-badge">Tailwind CSS</span>
+                            <span class="skill-badge">MySQL</span>
+                            <span class="skill-badge">Git</span>
+                            <span class="skill-badge">GitHub</span>
+                            <span class="skill-badge">VS Code</span>
+                            <span class="skill-badge">XAMPP</span>
+                            <span class="skill-badge">Laragon</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Autres compétences -->
+                    <div class="skill-category card fade-in">
+                        <h3 class="category-title">Autres</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge">UX/UI Design</span>
+                            <span class="skill-badge">Gestion de projet</span>
+                            <span class="skill-badge">Travail en équipe</span>
+                            <span class="skill-badge">PowerPoint</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION PROJETS -->
+        <section class="projects section" id="projects">
+            <div class="container">
+                <h2 class="section-title fade-in">Projets</h2>
+                
+                <div class="projects-grid">
+                    <!-- Projet 1 : MyLaboAccess -->
+                    <div class="project-card card fade-in">
+                        <h3 class="project-title">MyLaboAccess</h3>
+                        <p class="project-description">
+                            Application web de gestion de laboratoire permettant l'accessibilité rapide aux résultats d'analyses. 
+                            Interface moderne et sécurisée pour patients et professionnels de santé.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="#" class="project-link">Voir le projet →</a>
+                    </div>
+                    
+                    <!-- Projet 2 : Maison Pardailhé -->
+                    <div class="project-card card fade-in">
+                        <h3 class="project-title">Maison Pardailhé</h3>
+                        <p class="project-description">
+                            Site vitrine avec système de click & collect pour une charcuterie-traiteur. 
+                            Gestion des commandes en ligne et envoi automatique de mails de confirmation.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                        </div>
+                        <a href="https://xn--maisonpardailh-okb.fr/" target="_blank" rel="noopener noreferrer" class="project-link">Voir le projet →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION PARCOURS -->
+        <section class="timeline-section section" id="timeline">
+            <div class="container">
+                <h2 class="section-title fade-in">Parcours</h2>
+                
+                <div class="timeline">
+                    <!-- Élément 1 -->
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <span class="timeline-date">2023 – 2024</span>
+                            <h3 class="timeline-title">Baccalauréat NSI & SVT</h3>
+                            <p class="timeline-location">Spécialité Numérique et Sciences Informatiques et Science Vie de la Terre  + Mathématiques Complémentaires</p>
+                            <p class="timeline-description">
+                                Formation aux bases de la programmation, des algorithmes et des structures de données. 
+                                Développement de projets en Python et découverte des fondamentaux de l'informatique.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Élément 2 -->
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <span class="timeline-date">2025 – Aujourd'hui</span>
+                            <h3 class="timeline-title">Bachelor Développement Web & Logiciel</h3>
+                            <p class="timeline-location">IPI Toulouse, Groupe IGENSIA Education</p>
+                            <p class="timeline-description">
+                                Formation complète aux technologies web modernes, langages de programmation, 
+                                frameworks et méthodologies de développement. Projets en équipe et en solo.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Élément 3 -->
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <span class="timeline-date">2026 – Aujourd'hui</span>
+                            <h3 class="timeline-title">Projets personnels & freelance</h3>
+                            <p class="timeline-location">Indépendant</p>
+                            <p class="timeline-description">
+                                Création de sites web, boutiques en ligne, blogs et applications. 
+                                Expérience pratique en gestion de projets digitaux de A à Z : conception, développement, déploiement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION CONTACT -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <h2 class="section-title fade-in">Contact</h2>
+                
+                <p class="contact-intro fade-in">
+                    Vous avez un projet en tête, une opportunité de stage ou d'alternance ? 
+                    N'hésitez pas à me contacter, je serais ravi d'échanger avec vous !
+                </p>
+                
+                <div class="contact-content">
+                    <!-- Formulaire de contact -->
+                    <form class="contact-form card fade-in" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                        
+                        <!-- Message de succès -->
+                        <div class="success-message" id="successMessage">
+                            ✓ Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.
+                        </div>
+                    </form>
+                    
+                    <!-- Réseaux et liens -->
+                    <div class="contact-links fade-in">
+                        <h3 class="links-title">Me retrouver</h3>
+                        
+                        <a href="https://www.linkedin.com/in/reda-diouri" target="_blank" rel="noopener noreferrer" class="contact-link card">
+                            <span class="link-icon">💼</span>
+                            <div>
+                                <div class="link-name">LinkedIn</div>
+                                <div class="link-description">Restons connectés</div>
+                            </div>
+                        </a>
+                        
+                        <a href="mailto:redadiouri6@gmail.com" class="contact-link card">
+                            <span class="link-icon">✉️</span>
+                            <div>
+                                <div class="link-name">Email Personnel</div>
+                                <div class="link-description">redadiouri6@gmail.com</div>
+                            </div>
+                        </a>
+                        
+                        <a href="mailto:reda.diouri@edu.igensia.com" class="contact-link card">
+                            <span class="link-icon">📧</span>
+                            <div>
+                                <div class="link-name">Email École</div>
+                                <div class="link-description">reda.diouri@edu.igensia.com</div>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="contact-link card">
+                            <span class="link-icon">✈️</span>
+                            <div>
+                                <div class="link-name">Telegram</div>
+                                <div class="link-description">@reda_diouri</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2025 – Réda Diouri. Tous droits réservés.</p>
+            <a href="#header" class="back-to-top">↑ Retour en haut</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
