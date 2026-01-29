@@ -549,11 +549,12 @@ section {
 }
 
 .tag {
-    background: var(--bg-light);
+    background: rgba(196, 28, 59, 0.1);
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 0.85rem;
     color: var(--primary-color);
+    font-weight: 500;
 }
 
 .project-links {
