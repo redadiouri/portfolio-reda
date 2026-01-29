@@ -209,13 +209,15 @@ body {
     color: var(--primary-color);
     margin-bottom: 1rem;
     animation: fadeInUp 0.8s ease 0.2s backwards;
+    font-weight: 600;
 }
 
 .hero-description {
     font-size: 1.2rem;
-    color: var(--text-light);
+    color: var(--text-dark);
     margin-bottom: 2rem;
     animation: fadeInUp 0.8s ease 0.4s backwards;
+    opacity: 0.9;
 }
 
 .hero-buttons {
@@ -283,6 +285,7 @@ body {
     box-shadow: var(--shadow);
     animation: float 3s ease-in-out infinite;
     overflow: hidden;
+    will-change: transform;
 }
 
 .profile-image {
@@ -294,10 +297,10 @@ body {
 
 @keyframes float {
     0%, 100% {
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translate3d(0, -20px, 0);
     }
 }
 
