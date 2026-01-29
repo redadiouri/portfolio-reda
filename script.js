@@ -220,6 +220,73 @@ document.querySelectorAll('a, button').forEach(el => {
     });
 });
 
+// Galerie Lightbox
+const galleryModal = document.getElementById('gallery-modal');
+const galleryImage = document.getElementById('gallery-image');
+const galleryCounter = document.getElementById('gallery-counter');
+const galleryClose = document.querySelector('.gallery-close');
+const galleryPrev = document.querySelector('.gallery-prev');
+const galleryNext = document.querySelector('.gallery-next');
+
+const galleries = {
+    mla: ['img/image.png', 'img/image1.png']
+};
+
+let currentGallery = null;
+let currentImageIndex = 0;
+
+document.querySelectorAll('.gallery-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        currentGallery = btn.dataset.gallery;
+        currentImageIndex = 0;
+        showImage();
+        galleryModal.classList.add('active');
+    });
+});
+
+function showImage() {
+    if (currentGallery && galleries[currentGallery]) {
+        const images = galleries[currentGallery];
+        galleryImage.src = images[currentImageIndex];
+        galleryCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+    }
+}
+
+galleryClose.addEventListener('click', () => {
+    galleryModal.classList.remove('active');
+});
+
+galleryPrev.addEventListener('click', () => {
+    if (currentGallery && galleries[currentGallery]) {
+        const images = galleries[currentGallery];
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        showImage();
+    }
+});
+
+galleryNext.addEventListener('click', () => {
+    if (currentGallery && galleries[currentGallery]) {
+        const images = galleries[currentGallery];
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        showImage();
+    }
+});
+
+galleryModal.addEventListener('click', (e) => {
+    if (e.target === galleryModal) {
+        galleryModal.classList.remove('active');
+    }
+});
+
+// Clavier
+document.addEventListener('keydown', (e) => {
+    if (galleryModal.classList.contains('active')) {
+        if (e.key === 'ArrowLeft') galleryPrev.click();
+        if (e.key === 'ArrowRight') galleryNext.click();
+        if (e.key === 'Escape') galleryClose.click();
+    }
+});
+
 // Service Worker (cache des ressources statiques)
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {

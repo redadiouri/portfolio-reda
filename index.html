@@ -199,6 +199,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/redadiouri/mylaboacces" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <button class="project-link gallery-btn" data-gallery="mla" aria-label="Voir les captures d'écran"><i class="fas fa-images"></i> Galerie</button>
                         </div>
                     </div>
                 </div>
@@ -242,6 +243,23 @@
         </div>
     </section>
     </main>
+
+    <!-- Lightbox Galerie -->
+    <div id="gallery-modal" class="gallery-modal">
+        <div class="gallery-container">
+            <button class="gallery-close" aria-label="Fermer la galerie">&times;</button>
+            <div class="gallery-content">
+                <img id="gallery-image" src="" alt="Capture d'écran du projet" class="gallery-img">
+                <div class="gallery-nav">
+                    <button class="gallery-prev" aria-label="Image précédente">&lt;</button>
+                    <button class="gallery-next" aria-label="Image suivante">&gt;</button>
+                </div>
+                <div class="gallery-counter">
+                    <span id="gallery-counter">1 / 2</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
