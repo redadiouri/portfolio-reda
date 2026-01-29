@@ -19,8 +19,15 @@
     <meta name="twitter:description" content="Portfolio professionnel - Création d'expériences web modernes et élégantes">
     
     <title>Reda Diouri - Développeur Full Stack | Portfolio</title>
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preload" as="image" href="img/reda-300.jpg" imagesrcset="img/reda-300.webp 1x, img/reda-600.webp 2x, img/reda-300.jpg 1x, img/reda-600.jpg 2x" imagesizes="(max-width: 768px) 220px, 300px">
 </head>
 <body>
     <!-- Navigation -->
@@ -60,9 +67,9 @@
         <div class="hero-image">
             <div class="profile-circle" role="img" aria-label="Photo de profil">
                 <picture>
-                    <source type="image/webp" srcset="img/reda.webp 1x, img/reda@2x.webp 2x">
-                    <source type="image/jpeg" srcset="img/reda.jpg 1x, img/reda@2x.jpg 2x">
-                    <img src="img/reda.jpg" alt="Photo de Reda Diouri" class="profile-image" loading="eager" width="300" height="300" decoding="async">
+                    <source type="image/webp" srcset="img/reda-300.webp 1x, img/reda-600.webp 2x" sizes="(max-width: 768px) 220px, 300px">
+                    <source type="image/jpeg" srcset="img/reda-300.jpg 1x, img/reda-600.jpg 2x" sizes="(max-width: 768px) 220px, 300px">
+                    <img src="img/reda-300.jpg" alt="Photo de Reda Diouri" class="profile-image" loading="eager" width="300" height="300" decoding="async" fetchpriority="high">
                 </picture>
             </div>
         </div>
@@ -150,9 +157,9 @@
                 <div class="project-card">
                     <div class="project-image project-image-photo">
                         <picture>
-                            <source type="image/webp" srcset="img/maison.webp, img/maison@2x.webp 2x">
-                            <source type="image/jpeg" srcset="img/maison.jpg, img/maison@2x.jpg 2x">
-                            <img src="img/maison.jpg" alt="Maison Pardailhé" class="project-photo" loading="lazy" width="252" height="180" decoding="async">
+                            <source type="image/webp" srcset="img/maison-252.webp 1x, img/maison-504.webp 2x" sizes="(max-width: 768px) 220px, 320px">
+                            <source type="image/jpeg" srcset="img/maison-252.jpg 1x, img/maison-504.jpg 2x" sizes="(max-width: 768px) 220px, 320px">
+                            <img src="img/maison-252.jpg" alt="Maison Pardailhé" class="project-photo" loading="lazy" width="252" height="180" decoding="async">
                         </picture>
                         <div class="project-overlay"></div>
                     </div>
@@ -175,9 +182,9 @@
                 <div class="project-card">
                     <div class="project-image project-image-photo">
                         <picture>
-                            <source type="image/webp" srcset="img/mla.webp, img/mla@2x.webp 2x">
-                            <source type="image/png" srcset="img/mla.png, img/mla@2x.png 2x">
-                            <img src="img/mla.png" alt="MyLaboAcces MLA" class="project-photo" loading="lazy" width="270" height="180" decoding="async">
+                            <source type="image/webp" srcset="img/mla-270.webp 1x, img/mla-540.webp 2x" sizes="(max-width: 768px) 220px, 320px">
+                            <source type="image/png" srcset="img/mla-270.png 1x, img/mla-540.png 2x" sizes="(max-width: 768px) 220px, 320px">
+                            <img src="img/mla-270.png" alt="MyLaboAcces MLA" class="project-photo" loading="lazy" width="270" height="180" decoding="async">
                         </picture>
                         <div class="project-overlay"></div>
                     </div>
@@ -241,6 +248,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

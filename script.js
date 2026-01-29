@@ -87,22 +87,17 @@ document.querySelectorAll('.skill-card, .project-card, .stat').forEach(el => {
     observer.observe(el);
 });
 
-// Changement de style de la navbar au scroll
-let lastScroll = 0;
+// Changement de style de la navbar au scroll (optimisé)
 const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
     if (currentScroll > 100) {
-        navbar.style.padding = '0.5rem 0';
-        navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+        navbar.classList.add('navbar--scrolled');
     } else {
-        navbar.style.padding = '1rem 0';
+        navbar.classList.remove('navbar--scrolled');
     }
-    
-    lastScroll = currentScroll;
-});
+}, { passive: true });
 
 // Gestion du formulaire de contact
 const contactForm = document.querySelector('.contact-form');
@@ -129,17 +124,25 @@ if (heroTitle) {
     setTimeout(typeWriter, 500);
 }
 
-// Effet parallax sur le hero
+// Effet parallax sur le hero (requestAnimationFrame)
+let parallaxTicking = false;
 window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroContent = document.querySelector('.hero-content');
-    const heroImage = document.querySelector('.hero-image');
-    
-    if (heroContent && heroImage) {
-        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-        heroImage.style.transform = `translateY(${scrolled * 0.2}px)`;
-    }
-});
+    if (parallaxTicking) return;
+    parallaxTicking = true;
+
+    requestAnimationFrame(() => {
+        const scrolled = window.pageYOffset;
+        const heroContent = document.querySelector('.hero-content');
+        const heroImage = document.querySelector('.hero-image');
+
+        if (heroContent && heroImage) {
+            heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+            heroImage.style.transform = `translateY(${scrolled * 0.2}px)`;
+        }
+
+        parallaxTicking = false;
+    });
+}, { passive: true });
 
 // Compteur animé pour les statistiques
 const stats = document.querySelectorAll('.stat h3');
@@ -216,5 +219,14 @@ document.querySelectorAll('a, button').forEach(el => {
         cursor.style.background = 'transparent';
     });
 });
+
+// Service Worker (cache des ressources statiques)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {
+            // Service Worker non disponible
+        });
+    });
+}
 
 console.log('Portfolio chargé avec succès ! 🚀');
