@@ -462,7 +462,7 @@ section {
 }
 
 .project-card {
-    background: var(--bg-white);
+    background: var(--bg-light);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow);
