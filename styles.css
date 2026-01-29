@@ -11,7 +11,7 @@
     --accent-color: #dc2626;
     --text-dark: #1f2937;
     --text-light: #6b7280;
-    --bg-light: #f9fafb;
+    --bg-light: #f1f5f9;
     --bg-white: #ffffff;
     --gradient: linear-gradient(135deg, #C41C3B 0%, #A4161A 100%);
     --shadow: 0 10px 30px rgba(196, 28, 59, 0.15);
@@ -24,8 +24,8 @@
     --accent-color: #f87171;
     --text-dark: #ffffff;
     --text-light: #d1d5db;
-    --bg-light: #000000;
-    --bg-white: #000000;
+    --bg-light: #1e293b;
+    --bg-white: #0f172a;
     --gradient: linear-gradient(135deg, #C41C3B 0%, #A4161A 100%);
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
