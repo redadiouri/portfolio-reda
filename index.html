@@ -59,7 +59,11 @@
         </div>
         <div class="hero-image">
             <div class="profile-circle" role="img" aria-label="Photo de profil">
-                <img src="img/reda.JPG" alt="Photo de Reda Diouri" class="profile-image">
+                <picture>
+                    <source type="image/webp" srcset="img/reda.webp 1x, img/reda@2x.webp 2x">
+                    <source type="image/jpeg" srcset="img/reda.jpg 1x, img/reda@2x.jpg 2x">
+                    <img src="img/reda.jpg" alt="Photo de Reda Diouri" class="profile-image" loading="eager" width="300" height="300" decoding="async">
+                </picture>
             </div>
         </div>
     </section>
@@ -145,7 +149,11 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image project-image-photo">
-                        <img src="img/maison.JPG" alt="Maison Pardailhé" class="project-photo">
+                        <picture>
+                            <source type="image/webp" srcset="img/maison.webp, img/maison@2x.webp 2x">
+                            <source type="image/jpeg" srcset="img/maison.jpg, img/maison@2x.jpg 2x">
+                            <img src="img/maison.jpg" alt="Maison Pardailhé" class="project-photo" loading="lazy" width="252" height="180" decoding="async">
+                        </picture>
                         <div class="project-overlay"></div>
                     </div>
                     <div class="project-info">
@@ -166,7 +174,11 @@
 
                 <div class="project-card">
                     <div class="project-image project-image-photo">
-                        <img src="img/MLA.png" alt="MyLaboAcces MLA" class="project-photo">
+                        <picture>
+                            <source type="image/webp" srcset="img/mla.webp, img/mla@2x.webp 2x">
+                            <source type="image/png" srcset="img/mla.png, img/mla@2x.png 2x">
+                            <img src="img/mla.png" alt="MyLaboAcces MLA" class="project-photo" loading="lazy" width="270" height="180" decoding="async">
+                        </picture>
                         <div class="project-overlay"></div>
                     </div>
                     <div class="project-info">
