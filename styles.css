@@ -533,6 +533,7 @@ section {
 .project-info h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: var(--text-dark);
 }
 
 .project-info p {
