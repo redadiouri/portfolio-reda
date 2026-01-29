@@ -275,6 +275,7 @@ body {
 .profile-circle {
     width: 300px;
     height: 300px;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     background: var(--gradient);
     display: flex;
@@ -291,6 +292,7 @@ body {
 .profile-image {
     width: 100%;
     height: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -464,6 +466,8 @@ section {
 
 .project-image {
     height: 200px;
+    min-height: 200px;
+    aspect-ratio: 16 / 9;
     background: var(--gradient);
     display: flex;
     align-items: center;
@@ -490,6 +494,7 @@ section {
 .project-photo {
     width: 100%;
     height: 100%;
+    aspect-ratio: 3 / 2;
     object-fit: contain;
     object-position: center;
     display: block;

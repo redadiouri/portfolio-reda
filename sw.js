@@ -1,4 +1,4 @@
-const CACHE_NAME = 'portfolio-cache-v4';
+const CACHE_NAME = 'portfolio-cache-v5';
 const ASSETS = [
   '/',
   '/index.html',
@@ -17,6 +17,11 @@ const ASSETS = [
   '/img/mla-270.webp',
   '/img/mla-540.webp'
 ];
+
+// Configuration du cache avec durées longues
+const CACHE_CONFIG = {
+  maxAge: 31536000 // 1 an en secondes
+};
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -41,8 +46,13 @@ self.addEventListener('fetch', (event) => {
     caches.match(event.request).then((cached) => {
       if (cached) return cached;
       return fetch(event.request).then((response) => {
-        const responseClone = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
+        // Cache les images, CSS, JS avec headers de cache long
+        if (response.status === 200 && (
+          event.request.url.match(/\.(jpg|jpeg|png|webp|css|js)$/i)
+        )) {
+          const responseClone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
+        }
         return response;
       }).catch(() => cached);
     })
