@@ -528,6 +528,7 @@ section {
 
 .project-info {
     padding: 1.5rem;
+    background: var(--bg-white);
 }
 
 .project-info h3 {
@@ -549,11 +550,13 @@ section {
 }
 
 .tag {
-    background: var(--bg-light);
+    background: rgba(196, 28, 59, 0.1);
+    border: 1px solid var(--primary-color);
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 0.85rem;
     color: var(--primary-color);
+    font-weight: 500;
 }
 
 .project-links {
