@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Reda Diouri - Développeur Full Stack spécialisé en React, Node.js et développement web moderne">
+    <meta name="keywords" content="développeur, full stack, web, portfolio, React, Node.js, JavaScript">
+    <meta name="author" content="Reda Diouri">
+    <meta name="theme-color" content="#6366f1">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Reda Diouri - Développeur Full Stack">
+    <meta property="og:description" content="Portfolio professionnel - Création d'expériences web modernes et élégantes">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Reda Diouri - Développeur Full Stack">
+    <meta name="twitter:description" content="Portfolio professionnel - Création d'expériences web modernes et élégantes">
+    
+    <title>Reda Diouri - Développeur Full Stack | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+        <div class="container">
+            <div class="logo" aria-label="Logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#accueil" aria-label="Aller à la section Accueil">Accueil</a></li>
+                <li><a href="#apropos" aria-label="Aller à la section À Propos">À Propos</a></li>
+                <li><a href="#competences" aria-label="Aller à la section Compétences">Compétences</a></li>
+                <li><a href="#projets" aria-label="Aller à la section Projets">Projets</a></li>
+                <li><a href="#contact" aria-label="Aller à la section Contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Basculer le mode sombre" title="Changer le thème">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="burger" aria-label="Menu mobile" aria-expanded="false">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Section Hero -->
+    <section id="accueil" class="hero" role="banner">
+        <div class="hero-content">
+            <h1 class="hero-title">Bonjour, je suis DIOURI Reda</h1>
+            <p class="hero-subtitle" role="doc-subtitle"><strong>Étudiant en Bachelor Informatique</strong></p>
+            <p class="hero-description"><strong>Développeur passionné par la création d'applications web innovantes</strong></p>
+            <div class="hero-buttons">
+                <a href="https://www.fastfol.io/reda-diouri2" class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Voir mon portfolio IA FastFol"><i class="fas fa-robot"></i> Mon portfolio IA</a>
+                <a href="#projets" class="btn btn-secondary" aria-label="Voir mes projets">Voir mes projets</a>
+                <a href="#contact" class="btn btn-secondary" aria-label="Me contacter">Me contacter</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="profile-circle" role="img" aria-label="Photo de profil">
+                <img src="img/reda.JPG" alt="Photo de Reda Diouri" class="profile-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À Propos -->
+    <section id="apropos" class="about" aria-labelledby="about-title">
+        <div class="container">
+            <h2 id="about-title" class="section-title">À Propos de Moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Je suis un développeur en formation passionné par la création d'applications web. J'aime apprendre de nouvelles technologies et résoudre des problèmes concrets à travers le code. Chaque projet est pour moi une occasion de progresser et de mieux comprendre comment fonctionnent les choses.</p>
+                    <p>À la recherche d'un stage pour mettre en pratique mes connaissances et travailler sur des projets réels avec une vraie équipe.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>2+</h3>
+                            <p>Années d'expérience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>10</h3>
+                            <p>Projets réalisés</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="competences" class="skills" aria-labelledby="skills-title">
+        <div class="container">
+            <h2 id="skills-title" class="section-title">Mes Compétences</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p>Scripts, automatisation, jeux et développement backend</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML/CSS/JavaScript</h3>
+                    <p>Développement Frontend moderne et responsive</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <h3>PHP & SQL</h3>
+                    <p>Développement web dynamique et gestion de bases de données</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h3>Git & GitHub</h3>
+                    <p>Gestion de versions et travail collaboratif</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Frameworks Back & Front</h3>
+                    <p>React, Vue.js, Node.js, Django, Laravel et autres frameworks modernes</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>VS Code & Outils</h3>
+                    <p>Eclipse, PhpStorm, environnements de développement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projets" class="projects" aria-labelledby="projects-title">
+        <div class="container">
+            <h2 id="projects-title" class="section-title">Mes Projets Concrets</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image project-image-photo">
+                        <img src="img/maison.JPG" alt="Maison Pardailhé" class="project-photo">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Maison Pardailhé</h3>
+                        <p>Site vitrine élégant pour une maison d'hôtes avec système de réservation et galerie photos</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">MySQL Workbench</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://xn--maisonpardailh-okb.fr/" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fas fa-globe"></i> Visiter le site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project-image-photo">
+                        <img src="img/MLA.png" alt="MyLaboAcces MLA" class="project-photo">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>MyLaboAcces MLA</h3>
+                        <p>Application de gestion et de traitement du matériel du laboratoire IPI avec suivi d'inventaire</p>
+                        <div class="project-tags">
+                            <span class="tag">Dart + Flutter</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/redadiouri/mylaboacces" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+        <div class="container">
+            <h2 id="contact-title" class="section-title">Contactez-moi</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Restons en contact</h3>
+                    <p>À la recherche d'un stage en informatique à partir de février 2026. N'hésitez pas à me contacter !</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>redadiouri@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>reda.diouri@edu.igensia.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+33 7 58 71 60 91</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>France</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/reda-diouri" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/redadiouri" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.fastfol.io/reda-diouri2" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Mon portfolio IA FastFol"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Mon Portfolio. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
