@@ -6,28 +6,28 @@
 }
 
 :root {
-    --primary-color: #6366f1;
-    --secondary-color: #4f46e5;
-    --accent-color: #8b5cf6;
+    --primary-color: #C41C3B;
+    --secondary-color: #A4161A;
+    --accent-color: #dc2626;
     --text-dark: #1f2937;
     --text-light: #6b7280;
     --bg-light: #f9fafb;
     --bg-white: #ffffff;
-    --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    --shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+    --gradient: linear-gradient(135deg, #C41C3B 0%, #A4161A 100%);
+    --shadow: 0 10px 30px rgba(196, 28, 59, 0.15);
     --transition: all 0.3s ease;
 }
 
 [data-theme="dark"] {
-    --primary-color: #818cf8;
-    --secondary-color: #6366f1;
-    --accent-color: #a78bfa;
-    --text-dark: #f9fafb;
-    --text-light: #9ca3af;
-    --bg-light: #0f172a;
-    --bg-white: #1e293b;
-    --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --primary-color: #ef4444;
+    --secondary-color: #dc2626;
+    --accent-color: #f87171;
+    --text-dark: #ffffff;
+    --text-light: #d1d5db;
+    --bg-light: #000000;
+    --bg-white: #0a0a0a;
+    --gradient: linear-gradient(135deg, #C41C3B 0%, #A4161A 100%);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
 body {
@@ -166,7 +166,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 70px 20px 50px;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+    background: linear-gradient(135deg, rgba(196, 28, 59, 0.08) 0%, rgba(164, 22, 26, 0.08) 100%);
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     padding-left: calc(20px + (50vw - 50%));
