@@ -1895,3 +1895,374 @@ body:not(.motion-enabled) .reveal {
     width: 45px;
   }
 }
+
+/* REDA.EXE is an editorial layer; existing layout, palette and effects stay intact. */
+.identity-logo {
+  font-size: 1.2rem;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+}
+.identity-logo span {
+  color: #53683c;
+}
+.identity-state {
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+.identity-location {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.identity-label {
+  font-family: monospace;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  text-transform: none;
+}
+.eyebrow .identity-label {
+  display: inline-block;
+  margin-left: 12px;
+}
+.identity-card {
+  margin-top: 30px;
+  padding: 22px 24px;
+  border: 1px solid #cbd1c2;
+  border-radius: 6px;
+  background: #f5f4ee88;
+  max-width: 410px;
+}
+.identity-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.identity-card dl {
+  margin: 18px 0 0;
+}
+.identity-card dl > div {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 12px;
+  margin-top: 10px;
+  font-size: 0.78rem;
+}
+.identity-card dt {
+  color: var(--muted);
+}
+.identity-card dd {
+  margin: 0;
+}
+.identity-about {
+  display: block;
+  margin-top: 18px;
+  border: 0;
+  border-top: 1px solid var(--line);
+  width: 100%;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  padding: 15px 0 0;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+.identity-about span {
+  float: right;
+}
+.identity-history {
+  list-style: none;
+  padding: 0 0 0 19px;
+  border-left: 1px solid var(--line);
+  margin: 30px 0 0 4px;
+}
+.identity-history li {
+  position: relative;
+  margin-top: 22px;
+}
+.identity-history li::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #718442;
+}
+.identity-history strong {
+  display: block;
+  font-size: 0.9rem;
+  margin-block: 4px;
+  font-weight: 600;
+}
+.identity-history p {
+  font-size: 0.8rem;
+  max-width: 360px;
+}
+.identity-signature {
+  display: inline-block;
+  margin-top: 6px;
+}
+.identity-signature [data-build-label] {
+  margin-left: 8px;
+  font-family: monospace;
+}
+#identity-dialog {
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 30px;
+  width: min(520px, calc(100% - 32px));
+  max-height: calc(100dvh - 40px);
+  overflow: auto;
+  box-shadow: 0 25px 100px #17292333;
+}
+#identity-dialog::backdrop {
+  background: #17292366;
+}
+#identity-dialog form {
+  text-align: right;
+  margin-bottom: 20px;
+}
+#identity-dialog h2 {
+  font-size: 2rem;
+  margin-bottom: 22px;
+}
+#identity-dialog > p:not(.eyebrow) {
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+.identity-dialog-note {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+/* A one-time 800 ms accent on the label, never a blocking loading screen. */
+.motion-enabled .identity-boot .identity-start {
+  animation: identity-ready 0.8s ease-out both;
+}
+@keyframes identity-ready {
+  from {
+    opacity: 0.45;
+    letter-spacing: 0.22em;
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0.14em;
+  }
+}
+@media (max-width: 760px) {
+  .identity-logo {
+    font-size: 1.1rem;
+  }
+  .identity-card {
+    max-width: none;
+    padding: 20px;
+  }
+  .identity-card dl > div {
+    grid-template-columns: 88px 1fr;
+  }
+  .identity-history p {
+    max-width: none;
+  }
+  .eyebrow .identity-label {
+    margin-left: 8px;
+  }
+  #identity-dialog {
+    padding: 23px;
+  }
+}
+
+/* Computer-inspired chrome: decorative window controls, real navigation links. */
+.workspace-bar {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  border: 1px solid #bdc9b2;
+  border-radius: 7px;
+  padding: 13px 18px;
+  background: #f5f4eecc;
+  box-shadow: 0 5px 18px #17292308;
+}
+.workspace-session {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: monospace;
+  font-size: 0.75rem;
+}
+.workspace-state {
+  color: #536548;
+  border-left: 1px solid #bcc8b0;
+  padding-left: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 0.7rem;
+}
+.computer-icon {
+  display: inline-block;
+  width: 20px;
+  height: 14px;
+  border: 1.5px solid currentColor;
+  border-radius: 2px;
+  position: relative;
+  margin-bottom: 4px;
+}
+.computer-icon::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 4px;
+  border-bottom: 1.5px solid currentColor;
+  left: 3.5px;
+  bottom: -5px;
+}
+.workspace-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: 0.73rem;
+}
+.workspace-tabs a {
+  padding: 6px 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.workspace-tabs a:hover,
+.workspace-tabs a:focus-visible {
+  background: #e2ead8;
+  border-color: #bdc9b2;
+}
+.window-bar {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 20px;
+  background: #e9eee2;
+  color: #415236;
+  border-bottom: 1px solid #cbd4c1;
+  font-family: monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0;
+}
+.window-dots {
+  display: inline-flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+.window-dots i {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  opacity: 0.65;
+}
+.window-dots i:first-child {
+  background: currentColor;
+}
+.window-state {
+  margin-left: auto;
+  font-size: 0.58rem;
+  white-space: nowrap;
+  letter-spacing: 0.06em;
+}
+.hero-panel {
+  box-shadow: 0 16px 40px #1729231a;
+  border: 1px solid #3d5548;
+}
+.window-bar-dark {
+  margin: -29px -32px 24px;
+  padding: 15px 22px;
+  background: #223d31;
+  color: #d3dfc9;
+  border-bottom-color: #4b6252;
+}
+.project-window-bar {
+  grid-column: 1 / -1;
+}
+.profile-window-bar {
+  margin: -22px -24px 22px;
+  border-radius: 6px 6px 0 0;
+}
+.skills-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 20px;
+  border: 1px solid #526349;
+  border-radius: 6px 6px 0 0;
+  background: #ffffff05;
+  color: #c6d4bd;
+  font-family: monospace;
+  font-size: 0.75rem;
+}
+.skills-toolbar > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--lime);
+}
+.skills-toolbar > span:last-child {
+  font-family: Arial, sans-serif;
+  font-size: 0.7rem;
+}
+.file-icon {
+  display: inline-block;
+  width: 11px;
+  height: 14px;
+  border: 1px solid currentColor;
+  border-radius: 1px;
+}
+@media (max-width: 1000px) {
+  .window-bar-dark {
+    margin: -25px -25px 24px;
+  }
+}
+@media (max-width: 760px) {
+  .workspace-bar {
+    padding: 13px;
+    gap: 12px;
+  }
+  .workspace-tabs {
+    width: 100%;
+    border-top: 1px solid var(--line);
+    padding-top: 9px;
+  }
+  .workspace-tabs a {
+    padding: 7px 9px;
+  }
+  .window-bar {
+    padding: 12px 14px;
+    gap: 10px;
+    font-size: 0.62rem;
+  }
+  .window-bar-dark {
+    margin: -25px -28px 24px;
+  }
+  .hero-panel .project-symbol {
+    top: 96px;
+  }
+  .profile-window-bar {
+    margin: -20px -20px 20px;
+  }
+  .project-window-bar .window-state {
+    display: none;
+  }
+  .skills-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px;
+  }
+}

@@ -214,3 +214,37 @@ reducedMotion.addEventListener("change", syncMotion);
 document.addEventListener("visibilitychange", syncMotion);
 resizeCanvas();
 syncMotion();
+
+// REDA.EXE: a maintained editorial version, independent of the copyright year.
+const buildVersion = document.body.dataset.build;
+document.querySelectorAll("[data-build-label]").forEach((label) => {
+  label.textContent = `Build ${buildVersion}`;
+});
+// Session storage is optional; a blocked store simply skips this small effect.
+try {
+  if (!sessionStorage.getItem("reda-exe-visited")) {
+    sessionStorage.setItem("reda-exe-visited", "1");
+    if (motionAllowed()) {
+      const hero = document.querySelector(".hero");
+      hero.classList.add("identity-boot");
+      setTimeout(() => hero.classList.remove("identity-boot"), 800);
+    }
+  }
+} catch {
+  /* The portfolio remains fully usable without browser storage. */
+}
+
+// First discovery: a native accessible dialog with focus restoration and Escape.
+const identityDialog = document.getElementById("identity-dialog");
+const identityAbout = document.querySelector(".identity-about");
+if (typeof identityDialog.showModal === "function") {
+  identityAbout.hidden = false;
+  identityAbout.addEventListener("click", () => identityDialog.showModal());
+  identityDialog.addEventListener("close", () =>
+    identityAbout.focus({ preventScroll: true }),
+  );
+}
+// Second discovery, confined to the developer console: no tracked interactions.
+console.info(
+  `REDA.EXE · Build ${buildVersion}\nDerrière le programme : Reda Diouri. Toujours en évolution.\nhttps://redadiouri.github.io/portfolio-reda/`,
+);

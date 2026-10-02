@@ -33,7 +33,7 @@ Les polices système évitent des requêtes externes. Aucun traceur ni service t
 
 Mettre à jour les textes et liens directement dans `index.html`. Les projets partagent leurs styles : modifier `.project-body` agit sur les deux fiches professionnelles, ce qui évite les duplications. Les URLs GitHub sont celles communiquées par Reda ; leur visibilité dépend des paramètres des dépôts.
 
-L’adresse de publication du portfolio n’a pas été confirmée. Ajouter une URL canonique et `og:url` lorsqu’elle sera connue. Les titres, la description et les métadonnées Open Graph textuelles sont déjà présents.
+Le site est publié sur https://redadiouri.github.io/portfolio-reda/. L’URL canonique et `og:url` utilisent cette adresse. Les ressources gardent des chemins relatifs pour fonctionner sous `/portfolio-reda/`. Le workflow GitHub Pages géré par GitHub est conservé, sans configuration de build ajoutée.
 
 ## Vérification avant publication
 
@@ -52,3 +52,15 @@ Le mini-jeu facultatif se trouve après les projets. `game.js` gère un état lo
 Les boutons natifs fonctionnent au clavier et au toucher. Une zone `role="status"` annonce les retours ; le focus passe au titre à chaque étape. Le déploiement est une simulation locale, sans requête réseau. Son minuteur est annulé lorsqu’on ferme ou réinitialise le jeu. Aucun résultat n’est collecté.
 
 Pour le tester : essayer de mauvaises réponses, terminer les trois étapes, rejouer, puis fermer pendant la simulation et relancer. Vérifier également le parcours au clavier et sur un écran de 320 px.
+
+## Identité REDA.EXE
+
+REDA.EXE est une signature narrative ajoutée au design existant. Les couleurs, polices, cartes, animations et le mini-jeu restent ceux du portfolio. Les micro-labels complètent des titres lisibles, sans les remplacer.
+
+- La version éditoriale se modifie dans `data-build` sur le `body` de `index.html` (par exemple `2026.10`). Mettre également à jour les deux textes de secours `Build …` pour les visites sans JavaScript. Cette version représente une édition du portfolio, pas une date de diplôme ou un âge. Le script synchronise les labels ; l’année de copyright reste indépendante.
+- Le label d’accueil reçoit une animation de 800 ms lors de la première visite de la session. `sessionStorage` évite de la répéter. Aucun contenu n’attend cette animation ; si le stockage est bloqué ou les mouvements réduits, elle est ignorée.
+- La fiche personnelle ouvre un élément HTML `dialog` : Échap ferme la fenêtre, le focus reste dans la fenêtre ouverte puis revient au bouton. Sans JavaScript, la fiche est lisible et le bouton d’ouverture reste masqué.
+- Deux détails à découvrir : cette fenêtre et un message dans la console du navigateur. Aucune commande cachée ni suivi du visiteur.
+- Le parcours présente des étapes sans dates : formation, projets professionnels, apprentissage continu. Il ne prétend pas reconstituer une chronologie non confirmée.
+
+Après modification : tester les largeurs 375, 390, 430, 768, 1024 et 1440 px, les animations réduites, la fenêtre au clavier, la navigation et le jeu. Il n’y a pas de compilation : les fichiers statiques sont directement servis.

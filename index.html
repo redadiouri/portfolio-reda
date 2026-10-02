@@ -12,19 +12,26 @@
     <meta property="og:locale" content="fr_FR" />
     <meta
       property="og:title"
-      content="Reda Diouri — Développeur web à Toulouse"
+      content="Reda Diouri — Développeur web à Toulouse | REDA.EXE"
     />
     <meta
       property="og:description"
       content="Du besoin client à l’application web. Projets professionnels, développement Full Stack et formation à l’IPI Toulouse."
     />
-    <title>Reda Diouri — Développeur web Full Stack à Toulouse</title>
+    <title>
+      Reda Diouri — Développeur Web Full Stack à Toulouse | REDA.EXE
+    </title>
+    <link rel="canonical" href="https://redadiouri.github.io/portfolio-reda/" />
+    <meta
+      property="og:url"
+      content="https://redadiouri.github.io/portfolio-reda/"
+    />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
     <script src="game.js" defer></script>
   </head>
-  <body>
+  <body data-build="2026.10">
     <div class="animated-background" aria-hidden="true">
       <canvas id="ambient-canvas"></canvas>
       <div class="ambient-orbit"></div>
@@ -33,8 +40,11 @@
     <a class="skip-link" href="#main">Aller au contenu</a>
     <header class="header">
       <nav class="nav container" aria-label="Navigation principale">
-        <a class="logo" href="#accueil" aria-label="Reda Diouri, accueil"
-          >rd<span>.</span></a
+        <a
+          class="logo identity-logo"
+          href="#accueil"
+          aria-label="Reda Diouri, accueil"
+          >REDA<span>.EXE</span></a
         >
         <button
           class="menu-toggle"
@@ -49,7 +59,7 @@
           <li><a href="#apropos">À propos</a></li>
           <li><a href="#projets">Projets</a></li>
           <li><a href="#competences">Compétences</a></li>
-          <li><a href="#formation">Formation</a></li>
+          <li><a href="#formation">Parcours</a></li>
           <li>
             <a class="nav-contact" href="#contact"
               >Échangeons <span aria-hidden="true">↗</span></a
@@ -60,12 +70,28 @@
     </header>
     <main id="main">
       <section class="hero container" id="accueil" aria-labelledby="hero-title">
+        <div class="workspace-bar">
+          <div class="workspace-session">
+            <span class="computer-icon" aria-hidden="true"></span
+            ><strong>REDA.EXE</strong
+            ><span class="workspace-state">Session ouverte</span>
+          </div>
+          <nav aria-label="Raccourcis du portfolio" class="workspace-tabs">
+            <a href="#apropos">Profil</a><a href="#projets">Projets</a
+            ><a href="#mini-jeu">Atelier interactif</a>
+          </nav>
+        </div>
         <div class="hero-copy">
           <p class="eyebrow">
-            <span class="status-dot" aria-hidden="true"></span> Toulouse, France
-            · Portfolio
+            <span class="status-dot" aria-hidden="true"></span>
+            <span class="identity-start"
+              >REDA.EXE
+              <span class="identity-state">— System running</span></span
+            >
           </p>
-          <p class="hero-name">Reda Diouri</p>
+          <p class="hero-name">
+            Reda Diouri <span class="identity-location">· Toulouse</span>
+          </p>
           <h1 id="hero-title">
             Du besoin client<br />à <em>l’application web.</em>
           </h1>
@@ -78,6 +104,9 @@
           <div class="actions">
             <a class="button button-dark" href="#projets"
               >Voir mes projets <span aria-hidden="true">↘</span></a
+            >
+            <a class="text-link" href="#contact"
+              >Me contacter <span aria-hidden="true">↗</span></a
             >
             <a
               class="text-link"
@@ -106,6 +135,12 @@
           </details>
         </div>
         <aside class="hero-panel" aria-label="Projet à la une">
+          <div class="window-bar window-bar-dark">
+            <span class="window-dots" aria-hidden="true"
+              ><i></i><i></i><i></i></span
+            ><span>projects / justou</span
+            ><span class="window-state">ACTIF</span>
+          </div>
           <div class="panel-top">
             <span>EN COURS</span><span class="panel-index">01 / 03</span>
           </div>
@@ -124,7 +159,7 @@
           >
         </aside>
         <div class="hero-foot">
-          <span>DES PROJETS CONCRETS, DU FRONT AU BACK.</span
+          <span>REDA.EXE — CONSTRUIRE, APPRENDRE, ÉVOLUER.</span
           ><a href="#apropos"
             >Faire connaissance <span aria-hidden="true">↓</span></a
           >
@@ -134,26 +169,62 @@
       <section class="section about" id="apropos" aria-labelledby="about-title">
         <div class="container about-grid">
           <div>
-            <p class="eyebrow">01 — À propos</p>
+            <p class="eyebrow">
+              01 — À propos <span class="identity-label">whoami</span>
+            </p>
             <h2 id="about-title">
               Apprendre.<br />Construire.<br /><span class="muted"
                 >Répondre à un besoin.</span
               >
             </h2>
+            <div class="identity-card">
+              <div class="window-bar profile-window-bar">
+                <span class="window-dots" aria-hidden="true"
+                  ><i></i><i></i><i></i></span
+                ><span>Informations du profil</span>
+              </div>
+              <div class="identity-card-heading">
+                <span>REDA.EXE</span
+                ><span class="identity-label">profil en évolution</span>
+              </div>
+              <dl>
+                <div>
+                  <dt>Localisation</dt>
+                  <dd>Toulouse, France</dd>
+                </div>
+                <div>
+                  <dt>Formation</dt>
+                  <dd>IPI Toulouse</dd>
+                </div>
+                <div>
+                  <dt>Activité</dt>
+                  <dd>Développement web / Full Stack</dd>
+                </div>
+                <div>
+                  <dt>Cap actuel</dt>
+                  <dd>Apprendre et construire</dd>
+                </div>
+              </dl>
+              <button class="identity-about" type="button" hidden>
+                À propos de REDA.EXE <span aria-hidden="true">↗</span>
+              </button>
+            </div>
           </div>
           <div class="about-copy">
             <p class="lead">
-              Encore en formation, déjà impliqué dans des projets d’entreprise.
+              Je m’appelle Reda Diouri. J’apprends en construisant des projets
+              concrets.
             </p>
             <p>
-              Avec Poissonnerie Justou et Maison Pardailhé, je travaille sur des
-              besoins concrets : présenter une activité, gérer des commandes et
-              construire des espaces d’administration.
+              Étudiant à l’IPI Toulouse en Bachelor Développeur Informatique,
+              orienté conception et développement d’applications, je travaille
+              sur des projets web réels en parallèle de ma formation.
             </p>
             <p>
-              Ces projets me permettent de relier le développement des
-              interfaces à la logique métier et aux données, tout en échangeant
-              avec les personnes qui utiliseront le site.
+              J’aime comprendre comment les choses fonctionnent et progresser en
+              expérimentant. Avec Poissonnerie Justou et Maison Pardailhé, je
+              relie les interfaces, les données et les besoins des personnes qui
+              utiliseront le site.
             </p>
             <div class="workflow">
               <span class="small-label">Ma façon de travailler</span>
@@ -174,7 +245,10 @@
       >
         <div class="section-heading">
           <div>
-            <p class="eyebrow">02 — Sélection de projets</p>
+            <p class="eyebrow">
+              02 — Sélection de projets
+              <span class="identity-label">projects/</span>
+            </p>
             <h2 id="projects-title">Le concret, en premier.</h2>
           </div>
           <p>
@@ -186,6 +260,12 @@
           id="justou"
           aria-labelledby="justou-title"
         >
+          <div class="window-bar project-window-bar">
+            <span class="window-dots" aria-hidden="true"
+              ><i></i><i></i><i></i></span
+            ><span>projects / Poissonnerie Justou</span
+            ><span class="window-state">EN COURS</span>
+          </div>
           <div class="project-cover justou-cover">
             <div class="cover-top">
               <span>01 / PROJET PROFESSIONNEL</span
@@ -243,6 +323,12 @@
           </div>
         </article>
         <article class="project featured" aria-labelledby="pardailhe-title">
+          <div class="window-bar project-window-bar">
+            <span class="window-dots" aria-hidden="true"
+              ><i></i><i></i><i></i></span
+            ><span>projects / Maison Pardailhé</span
+            ><span class="window-state">EN LIGNE</span>
+          </div>
           <div class="project-cover pardailhe-cover">
             <div class="cover-top">
               <span>02 / PROJET PROFESSIONNEL</span
@@ -303,8 +389,8 @@
             <h3 id="labo-title">MyLaboAccess</h3>
             <p>
               Un projet développé progressivement au fil des années de formation
-              à l’IPI. Ses évolutions m’ont permis de travailler sur le
-              développement applicatif, la base de données et
+              à l’IPI. Une étape de mon évolution, qui m’a permis de travailler
+              sur le développement applicatif, la base de données et
               l’authentification.
             </p>
             <ul class="tags" aria-label="Domaines MyLaboAccess">
@@ -383,7 +469,10 @@
         <div class="container">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">03 — Compétences & outils</p>
+              <p class="eyebrow">
+                03 — Compétences & outils
+                <span class="identity-label">skills.json</span>
+              </p>
               <h2 id="skills-title">
                 Une boîte à outils<br />qui se construit sur le terrain.
               </h2>
@@ -392,6 +481,12 @@
               Des technologies utilisées en projet<br />ou abordées pendant ma
               formation.
             </p>
+          </div>
+          <div class="skills-toolbar">
+            <span
+              ><span class="file-icon" aria-hidden="true"></span>
+              skills.json</span
+            ><span>6 catégories · Technologies & outils</span>
           </div>
           <div class="skills-grid">
             <div class="skill">
@@ -439,10 +534,37 @@
         aria-labelledby="education-title"
       >
         <div>
-          <p class="eyebrow">04 — Formation</p>
-          <h2 id="education-title">
-            La pratique,<br />avec des bases solides.
-          </h2>
+          <p class="eyebrow">
+            04 — Parcours & formation
+            <span class="identity-label">version_history</span>
+          </p>
+          <h2 id="education-title">Une version qui<br />continue d’évoluer.</h2>
+          <ol
+            class="identity-history"
+            aria-label="Étapes de mon évolution, sans chronologie datée"
+          >
+            <li>
+              <span class="identity-label">Les bases</span
+              ><strong>Apprendre en formation</strong>
+              <p>
+                Développement applicatif, données et authentification avec
+                MyLaboAccess.
+              </p>
+            </li>
+            <li>
+              <span class="identity-label">La pratique</span
+              ><strong>Construire pour des entreprises</strong>
+              <p>
+                Des besoins concrets avec Maison Pardailhé et Poissonnerie
+                Justou.
+              </p>
+            </li>
+            <li>
+              <span class="identity-label">Current build</span
+              ><strong>Continuer à apprendre</strong>
+              <p>Faire évoluer mes projets et ma façon de développer.</p>
+            </li>
+          </ol>
         </div>
         <div class="education-card">
           <span class="pill">Formation en cours</span>
@@ -462,7 +584,9 @@
         aria-labelledby="contact-title"
       >
         <div class="container">
-          <p class="eyebrow">05 — Contact</p>
+          <p class="eyebrow">
+            05 — Contact <span class="identity-label">contact.exe</span>
+          </p>
           <div class="contact-heading">
             <h2 id="contact-title">Parlons de<br />votre <em>projet.</em></h2>
             <p>
@@ -500,11 +624,36 @@
       <button class="motion-toggle" type="button" aria-pressed="false" hidden>
         Mettre les animations en pause
       </button>
-      <a class="logo" href="#accueil" aria-label="Reda Diouri, accueil"
-        >rd<span>.</span></a
+      <a
+        class="logo identity-logo"
+        href="#accueil"
+        aria-label="Reda Diouri, accueil"
+        >REDA<span>.EXE</span></a
       >
-      <p>© <span id="year">2026</span> Reda Diouri · Développé à Toulouse</p>
+      <p>
+        © <span id="year">2026</span> Reda Diouri · Toulouse<br /><span
+          class="identity-signature"
+          >REDA.EXE — toujours en évolution.
+          <span data-build-label>Build 2026.10</span></span
+        >
+      </p>
       <a href="#accueil">Retour en haut ↑</a>
     </footer>
+    <dialog id="identity-dialog" aria-labelledby="identity-dialog-title">
+      <form method="dialog">
+        <button class="game-quiet" autofocus>Fermer</button>
+      </form>
+      <p class="eyebrow">Vous avez ouvert les détails du programme.</p>
+      <h2 id="identity-dialog-title">Derrière REDA.EXE,<br />il y a Reda.</h2>
+      <p>
+        Pas un logiciel à télécharger : une identité qui évolue avec ma
+        formation, mes projets et ce que j’apprends en chemin.
+      </p>
+      <p class="identity-dialog-note">
+        Aucune version finale prévue. Il reste toujours quelque chose à
+        apprendre.
+      </p>
+      <span class="identity-label" data-build-label>Build 2026.10</span>
+    </dialog>
   </body>
 </html>
