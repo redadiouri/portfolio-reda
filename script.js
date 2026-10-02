@@ -1,164 +1,216 @@
-// ========================================
-// GESTION DU MENU BURGER (MOBILE)
-// ========================================
+// Progressive enhancement: all content and contact links work without JavaScript.
+const menuButton = document.querySelector(".menu-toggle");
+const navigation = document.getElementById("navigation");
+const mobileViewport = window.matchMedia("(max-width: 760px)");
 
-const burgerMenu = document.getElementById('burgerMenu');
-const navMenu = document.getElementById('navMenu');
-const navLinks = document.querySelectorAll('.nav-link');
+function closeMenu(returnFocus = false) {
+  navigation.classList.remove("is-open");
+  menuButton.setAttribute("aria-expanded", "false");
+  if (returnFocus) menuButton.focus();
+}
 
-// Ouvrir/fermer le menu mobile au clic sur le burger
-burgerMenu.addEventListener('click', () => {
-    burgerMenu.classList.toggle('active');
-    navMenu.classList.toggle('active');
+function syncMenu() {
+  closeMenu();
+  menuButton.hidden = !mobileViewport.matches;
+  navigation.toggleAttribute("data-collapsible", mobileViewport.matches);
+}
+
+menuButton.addEventListener("click", () => {
+  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+  navigation.classList.toggle("is-open", !isOpen);
+  menuButton.setAttribute("aria-expanded", String(!isOpen));
 });
 
-// Fermer le menu mobile quand on clique sur un lien
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        burgerMenu.classList.remove('active');
-        navMenu.classList.remove('active');
+navigation.addEventListener("click", (event) => {
+  if (event.target.closest("a")) closeMenu();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "Escape" &&
+    menuButton.getAttribute("aria-expanded") === "true"
+  ) {
+    closeMenu(true);
+  }
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".nav")) closeMenu();
+});
+
+mobileViewport.addEventListener("change", syncMenu);
+syncMenu();
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// All motion shares one preference: the OS setting or the visible pause control.
+const motionButton = document.querySelector(".motion-toggle");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+let paused = false;
+let frame = 0;
+let lastFrame = 0;
+const motionAllowed = () => !reducedMotion.matches && !paused;
+
+// Reveal the content progressively without making it inaccessible without JS.
+const revealElements = document.querySelectorAll(
+  ".section-heading, .about-grid > div, .project, .academic-project, .skill, .education > div, .contact-heading",
+);
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-revealed");
+        revealObserver.unobserve(entry.target);
+      }
     });
+  },
+  { threshold: 0.08 },
+);
+revealElements.forEach((element, index) => {
+  element.classList.add("reveal");
+  element.style.setProperty("--reveal-delay", `${(index % 3) * 80}ms`);
+  revealObserver.observe(element);
 });
 
-// ========================================
-// NAVBAR : FOND FLOU AU SCROLL
-// ========================================
+// Local tilt: transform only the hovered surface, never the page or scroll.
+const tiltElements = document.querySelectorAll(
+  ".hero-panel, .project-cover, .skill",
+);
+tiltElements.forEach((element) => {
+  element.classList.add("tilt-surface");
+  element.addEventListener("pointermove", (event) => {
+    if (!motionAllowed() || !finePointer.matches) return;
+    const bounds = element.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width;
+    const y = (event.clientY - bounds.top) / bounds.height;
+    element.style.setProperty("--tilt-x", `${(0.5 - y) * 5}deg`);
+    element.style.setProperty("--tilt-y", `${(x - 0.5) * 6}deg`);
+    element.style.setProperty("--light-x", `${x * 100}%`);
+    element.style.setProperty("--light-y", `${y * 100}%`);
+  });
+  element.addEventListener("pointerleave", () => {
+    element.style.setProperty("--tilt-x", "0deg");
+    element.style.setProperty("--tilt-y", "0deg");
+  });
+});
 
-const header = document.getElementById('header');
-
-window.addEventListener('scroll', () => {
-    // Ajoute la classe "scrolled" si on a scrollé de plus de 50px
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+// Scroll progress is scheduled once per rendering frame, not on every event.
+const progress = document.querySelector(".scroll-progress");
+let scrollScheduled = false;
+function updateScroll() {
+  const maximum = document.documentElement.scrollHeight - innerHeight;
+  progress.style.transform = `scaleX(${maximum > 0 ? scrollY / maximum : 0})`;
+  document
+    .querySelector(".header")
+    .classList.toggle("has-scrolled", scrollY > 30);
+  scrollScheduled = false;
+}
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!scrollScheduled) {
+      scrollScheduled = true;
+      requestAnimationFrame(updateScroll);
     }
+  },
+  { passive: true },
+);
+
+// A small canvas constellation: capped particle count and device pixel ratio.
+const canvas = document.getElementById("ambient-canvas");
+const context = canvas.getContext("2d");
+let particles = [];
+let width = 0;
+let height = 0;
+const pointer = { x: -1000, y: -1000 };
+function resizeCanvas() {
+  width = innerWidth;
+  height = innerHeight;
+  const ratio = Math.min(devicePixelRatio || 1, 1.5);
+  canvas.width = Math.round(width * ratio);
+  canvas.height = Math.round(height * ratio);
+  context?.setTransform(ratio, 0, 0, ratio, 0, 0);
+  particles = Array.from({ length: width < 760 ? 26 : 58 }, () => ({
+    x: Math.random() * width,
+    y: Math.random() * height,
+    vx: (Math.random() - 0.5) * 0.35,
+    vy: (Math.random() - 0.5) * 0.35,
+    radius: 1 + Math.random() * 1.5,
+  }));
+  updateScroll();
+}
+window.addEventListener("resize", resizeCanvas);
+window.addEventListener(
+  "pointermove",
+  (event) => {
+    if (!finePointer.matches) return;
+    pointer.x = event.clientX;
+    pointer.y = event.clientY;
+  },
+  { passive: true },
+);
+document.documentElement.addEventListener("pointerleave", () => {
+  pointer.x = pointer.y = -1000;
 });
-
-// ========================================
-// ANIMATIONS AU SCROLL (IntersectionObserver)
-// ========================================
-
-// Sélectionne tous les éléments avec la classe "fade-in"
-const fadeElements = document.querySelectorAll('.fade-in');
-
-// Options pour l'IntersectionObserver
-const observerOptions = {
-    threshold: 0.1, // Déclenche quand 10% de l'élément est visible
-    rootMargin: '0px 0px -50px 0px' // Décale légèrement la zone de détection
-};
-
-// Callback qui s'exécute quand un élément entre dans le viewport
-const observerCallback = (entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Ajoute la classe "visible" pour lancer l'animation CSS
-            entry.target.classList.add('visible');
-            // Arrête d'observer cet élément une fois animé
-            observer.unobserve(entry.target);
-        }
-    });
-};
-
-// Crée l'observer et observe tous les éléments "fade-in"
-const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-fadeElements.forEach(element => {
-    observer.observe(element);
-});
-
-// ========================================
-// SCROLL FLUIDE VERS LES SECTIONS
-// ========================================
-
-// Note : Le scroll fluide est déjà activé via CSS (scroll-behavior: smooth)
-// Mais on peut aussi le gérer en JS si besoin de plus de contrôle
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        
-        // Si le lien pointe vers une ancre valide
-        if (targetId !== '#' && document.querySelector(targetId)) {
-            e.preventDefault();
-            
-            const targetElement = document.querySelector(targetId);
-            
-            // Scroll vers l'élément avec un offset pour compenser la navbar fixe
-            const offsetTop = targetElement.offsetTop - 80;
-            
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// ========================================
-// VALIDATION & ENVOI DU FORMULAIRE DE CONTACT
-// ========================================
-
-const contactForm = document.getElementById('contactForm');
-const successMessage = document.getElementById('successMessage');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Empêche le rechargement de la page
-    
-    // Récupération des valeurs du formulaire
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    
-    // Validation simple
-    if (name === '' || email === '' || message === '') {
-        alert('Veuillez remplir tous les champs.');
-        return;
+function drawFrame(time) {
+  frame = 0;
+  if (!context || !motionAllowed() || document.hidden) return;
+  const delta = Math.min((time - (lastFrame || time)) / 16.67, 2);
+  lastFrame = time;
+  context.clearRect(0, 0, width, height);
+  particles.forEach((particle, index) => {
+    particle.x = (particle.x + particle.vx * delta + width) % width;
+    particle.y = (particle.y + particle.vy * delta + height) % height;
+    context.fillStyle = "rgba(64, 100, 65, 0.45)";
+    context.beginPath();
+    context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+    context.fill();
+    // Nearby points connect into a slowly changing network.
+    for (
+      let otherIndex = index + 1;
+      otherIndex < particles.length;
+      otherIndex++
+    ) {
+      const other = particles[otherIndex];
+      const distance = Math.hypot(particle.x - other.x, particle.y - other.y);
+      if (distance < 145) {
+        context.strokeStyle = `rgba(64, 100, 65, ${0.16 * (1 - distance / 145)})`;
+        context.beginPath();
+        context.moveTo(particle.x, particle.y);
+        context.lineTo(other.x, other.y);
+        context.stroke();
+      }
     }
-    
-    // Validation basique de l'email (format simple)
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Veuillez entrer une adresse email valide.');
-        return;
+    const distance = Math.hypot(particle.x - pointer.x, particle.y - pointer.y);
+    if (distance < 180) {
+      context.strokeStyle = `rgba(64, 100, 65, ${0.35 * (1 - distance / 180)})`;
+      context.beginPath();
+      context.moveTo(particle.x, particle.y);
+      context.lineTo(pointer.x, pointer.y);
+      context.stroke();
     }
-    
-    // Simulation d'envoi (pas de backend réel)
-    console.log('Formulaire soumis avec succès :');
-    console.log('Nom :', name);
-    console.log('Email :', email);
-    console.log('Message :', message);
-    
-    // Affichage du message de succès
-    successMessage.classList.add('show');
-    
-    // Réinitialiser le formulaire
-    contactForm.reset();
-    
-    // Masquer le message de succès après 5 secondes
-    setTimeout(() => {
-        successMessage.classList.remove('show');
-    }, 5000);
+  });
+  frame = requestAnimationFrame(drawFrame);
+}
+function syncMotion() {
+  document.body.classList.toggle("motion-enabled", motionAllowed());
+  document.body.classList.toggle("background-paused", paused);
+  motionButton.hidden = reducedMotion.matches;
+  motionButton.setAttribute("aria-pressed", String(paused));
+  motionButton.textContent = paused
+    ? "Activer les animations"
+    : "Mettre les animations en pause";
+  if (frame) cancelAnimationFrame(frame);
+  frame = 0;
+  lastFrame = 0;
+  if (motionAllowed() && !document.hidden && context)
+    frame = requestAnimationFrame(drawFrame);
+}
+motionButton.addEventListener("click", () => {
+  paused = !paused;
+  syncMotion();
 });
-
-// ========================================
-// AMÉLIORATION DE L'ACCESSIBILITÉ
-// ========================================
-
-// Détection de navigation au clavier (Tab) pour améliorer l'accessibilité
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab') {
-        document.body.classList.add('keyboard-nav');
-    }
-});
-
-document.addEventListener('mousedown', () => {
-    document.body.classList.remove('keyboard-nav');
-});
-
-// ========================================
-// CONSOLE LOG POUR CONFIRMATION DU CHARGEMENT
-// ========================================
-
-console.log('Portfolio de Réda Diouri - Script chargé avec succès ! 🚀');
-console.log('Développé avec ❤️ en HTML/CSS/JS pur');
+reducedMotion.addEventListener("change", syncMotion);
+document.addEventListener("visibilitychange", syncMotion);
+resizeCanvas();
+syncMotion();
